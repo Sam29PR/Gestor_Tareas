@@ -7,6 +7,7 @@ import { TaskFormComponent } from './tasks/task-form/task-form.component';
 
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import path from 'path';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 
@@ -27,5 +28,5 @@ const routes : Routes = [
 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay())]
+  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), provideClientHydration(withEventReplay()), provideAnimationsAsync()]
 };

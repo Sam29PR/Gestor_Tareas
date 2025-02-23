@@ -1,1 +1,48 @@
-<p>task-list works!</p>
+<mat-card>
+    <mat-card-title>Mis Tareas</mat-card-title>
+    <mat-card-content>
+      <!-- Formulario para agregar una nueva tarea -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nueva Tarea</mat-label>
+        <input matInput [formControl]="nuevaTareaControl" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="agregarTarea()">Agregar</button>
+  
+      <!-- Filtros -->
+      <mat-button-toggle-group [formControl]="filtroControl">
+        <mat-button-toggle value="todas">Todas</mat-button-toggle>
+        <mat-button-toggle value="completadas">Completadas</mat-button-toggle>
+        <mat-button-toggle value="pendientes">Pendientes</mat-button-toggle>
+      </mat-button-toggle-group>
+  
+      <!-- Lista de tareas -->
+      <mat-list>
+        <mat-list-item *ngFor="let tarea of tareasFiltradas">
+          <!-- Checkbox para marcar como completada -->
+          <mat-checkbox [checked]="tarea.completada" (change)="actualizarTarea(tarea)"></mat-checkbox>
+  
+          <!-- Modo Edición -->
+          <input *ngIf="tareaEditandoId === tarea.id"
+                 matInput [formControl]="edicionControl"
+                 (keyup.enter)="guardarEdicion(tarea)"
+                 (blur)="guardarEdicion(tarea)" />
+  
+          <!-- Modo Normal -->
+          <span *ngIf="tareaEditandoId !== tarea.id" (dblclick)="editarTarea(tarea)">
+            {{ tarea.nombre }}
+          </span>
+  
+          <span class="spacer"></span>
+  
+          <!-- Botones de editar y eliminar -->
+          <button mat-icon-button color="primary" (click)="editarTarea(tarea)">
+            <mat-icon>edit</mat-icon>
+          </button>
+  
+          <button mat-icon-button color="warn" (click)="eliminarTarea(tarea.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>

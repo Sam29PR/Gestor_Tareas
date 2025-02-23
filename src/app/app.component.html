@@ -1,4 +1,16 @@
+<mat-toolbar color="primary">
+  <img class="logo" src="/Gestor_Tareas/public/assets/logo.png" alt="logo"/>
+  <span>Gestor de Tareas</span>
+  <span class="spacer"></span>
+  <button mat-button routerLink="/tasks">Tareas</button>
+  <button mat-button routerLink="/auth/login">Iniciar Sesión</button>
+  <button mat-button routerLink="/auth/register">Registrarse</button>
+</mat-toolbar>
 
 
-
-<router-outlet />
+<div class="container">
+   <mat-card class="card">
+   
+   </mat-card>
+  <router-outlet></router-outlet>
+</div>
