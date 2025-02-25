@@ -10,6 +10,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatToolbar } from '@angular/material/toolbar';
+import {MatSidenav, MatSidenavContainer, MatSidenavContent} from '@angular/material/sidenav';
 
 @Component({
   standalone: true,
@@ -27,6 +29,12 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonToggleModule,
+    MatToolbar,
+    MatSidenav,
+    MatSidenavContainer,
+    MatSidenavContent,
+    
+    
   ],
 })
 export class TaskListComponent implements OnInit {

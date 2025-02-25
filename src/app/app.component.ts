@@ -5,6 +5,7 @@ import { MatCard,  } from '@angular/material/card';
 import { MatCardContent } from '@angular/material/card';
 
 import { animate, style, transition, trigger } from '@angular/animations';
+import { MatIcon } from '@angular/material/icon';
 
 
 @Component({
@@ -15,6 +16,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
     RouterOutlet,
     MatToolbar,
     MatCard,
+    MatIcon
     
 ],
 animations: [

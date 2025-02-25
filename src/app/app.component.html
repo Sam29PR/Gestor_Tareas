@@ -1,10 +1,19 @@
 <mat-toolbar color="primary">
-  <img class="logo" src="/Gestor_Tareas/public/assets/logo.png" alt="logo"/>
+  <img src="icons/logo.png" class="logo" />
   <span>Gestor de Tareas</span>
   <span class="spacer"></span>
-  <button mat-button routerLink="/tasks">Tareas</button>
-  <button mat-button routerLink="/auth/login">Iniciar Sesión</button>
-  <button mat-button routerLink="/auth/register">Registrarse</button>
+  <button mat-raised-button color="accent" class="btn-anim" routerLink="/tasks" > 
+    <mat-icon>add</mat-icon>  Tareas
+    
+  </button>
+  <button mat-raised-button color="accent" class="btn-anim" routerLink="/auth/login"> 
+    <mat-icon>add</mat-icon>  Iniciar Sesión
+
+  </button>
+  <button mat-raised-button color="accent" class="btn-anim" routerLink="/auth/register"> 
+    <mat-icon>add</mat-icon>  Registrarse
+
+  </button>
 </mat-toolbar>
 
 
